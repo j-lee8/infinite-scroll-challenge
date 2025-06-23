@@ -26,7 +26,7 @@ Implement an infinite scroll feature to display pages of products (10 per page)
    - Speed index etc
 3. More tests
 4. Storybooks of components to show their different states
-5. Better SEO support
+5. Better SEO support (using Reatc Helmet)
 
 - Keywords
 - OpenGraph tags

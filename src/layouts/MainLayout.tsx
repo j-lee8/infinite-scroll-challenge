@@ -13,7 +13,7 @@ export const MainLayout: FC<MainLayoutProps> = ({
   children,
 }) => {
   return (
-    <main className="grow h-screen max-h-screen px-20 py-12 bg-gray-100">
+    <main className="grow h-screen max-h-screen px-20 py-12">
       <Title title={title} additionalTitle={additionalTitle} />
       <section className="flex flex-col h-full">{children}</section>
     </main>

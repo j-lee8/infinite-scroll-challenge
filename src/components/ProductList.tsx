@@ -1,0 +1,65 @@
+import { useGetProducts } from "@hooks/useGetProducts";
+import { Card } from "./Card";
+import { ProductLayout } from "@layouts/ProductLayout";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { Spinner } from "./Spinner";
+
+// IMPROVEMENT: Add to types folder if used elsewhere
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  images: string[];
+  reviews: Review[];
+  num: number;
+}
+
+interface Review {
+  rating: number;
+  comment: string;
+  date: string;
+}
+
+export const ProductList = () => {
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    useGetProducts();
+
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    if (inView && hasNextPage && !isFetchingNextPage) {
+      fetchNextPage();
+    }
+  }, [inView, hasNextPage, isFetchingNextPage, fetchNextPage]);
+
+  return (
+    <>
+      <ProductLayout>
+        {data?.pages.map((page) =>
+          page.products.map((product: Product) => (
+            <Card
+              key={product.id}
+              title={product.title}
+              price={product.price}
+              images={product.images}
+              reviews={product.reviews.length}
+              num={product.id}
+            />
+          )),
+        )}
+      </ProductLayout>
+
+      {hasNextPage && !isFetchingNextPage && <div ref={ref} />}
+      {isFetchingNextPage && (
+        <div className="flex justify-center items-center my-2">
+          <Spinner />
+        </div>
+      )}
+      {!hasNextPage && (
+        <p className="flex justify-center my-2">No more products.</p>
+      )}
+      <div className="border-b mb-8" />
+    </>
+  );
+};

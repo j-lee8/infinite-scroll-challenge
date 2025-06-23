@@ -22,8 +22,14 @@ interface Review {
 }
 
 export const ProductList = () => {
-  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
-    useGetProducts();
+  const {
+    data,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+    isError,
+    error,
+  } = useGetProducts();
 
   const { ref, inView } = useInView();
 
@@ -32,6 +38,17 @@ export const ProductList = () => {
       fetchNextPage();
     }
   }, [inView, hasNextPage, isFetchingNextPage, fetchNextPage]);
+
+  if (isError) {
+    return (
+      <div className="text-center text-red-600 my-4">
+        Error loading products:{" "}
+        {"message" in error && typeof error.message === "string"
+          ? error.message
+          : "Please try again later."}
+      </div>
+    );
+  }
 
   return (
     <>

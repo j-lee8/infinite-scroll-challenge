@@ -1,3 +1,38 @@
+# Task Notes
+
+## Task
+
+Implement an infinite scroll feature to display pages of products (10 per page)
+
+### Setup
+
+1. pnpm i
+
+### Running the app
+
+1. pnpm dev
+
+### Running the tests
+
+1. pnpm test
+
+### Improvements
+
+1. Internationalistion to support different languages
+2. Improve Lighthouse score
+   - Latency
+   - Requests per second
+   - Largest contenful paint
+   - Speed index etc
+3. More tests
+4. Storybooks of components to show their different states
+5. Better SEO support
+
+- Keywords
+- OpenGraph tags
+- robots.txt for search engine crawlers
+- sitemap.xml (although we only have one, but if it was extended)
+
 # Infinte Scroll Challenge
 
 As the title states, this is a challenge to build an infinite scroll feature. This means that the page will have a list of items and when the user scrolls to the bottom of the list, the page will load more items automatically.

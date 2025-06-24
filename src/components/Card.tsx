@@ -1,16 +1,18 @@
+// Card.tsx
 import { FC } from "react";
+import { ImageSlider } from "./ImageSlider";
 
 interface CardProps {
   title: string;
   price: number;
   reviews: number;
   images: string[];
-  id: number; // Not used, but would be needed if we wanted to click on a card to view more details about the product via a link
+  id: number;
 }
 
 export const Card: FC<CardProps> = ({ title, price, reviews, images }) => {
   return (
-    <div className="bg-gray-200 p-4 flex flex-col gap-4 w-fit">
+    <div className="bg-gray-200 p-4 flex flex-col gap-4 w-full max-w-[400px] mx-auto">
       <div className="flex items-center justify-between">
         <span className="text-sm bg-orange-100/60 px-4 py-1 rounded-full">
           {reviews} reviews
@@ -22,19 +24,19 @@ export const Card: FC<CardProps> = ({ title, price, reviews, images }) => {
           Customize
         </button>
       </div>
-      <img src={images?.[0]} alt={title} width={400} height={400} />
 
-      <div className="bg-white p-3 gap-3 flex items-center">
+      <ImageSlider images={images} />
+
+      <div className="bg-white p-3 gap-3 flex items-center rounded">
         <div>
-          <div>
-            <h3 className="font-medium">{title}</h3>
-          </div>
+          <h3 className="font-medium">{title}</h3>
           <p className="text-sm text-gray-400">From ${price}</p>
         </div>
         <div className="w-px self-stretch bg-gray-400 ml-auto" />
         <img
           src="/shopping-cart.svg"
-          alt="Shopping cart icon"
+          alt=""
+          role="presentation"
           className="mr-2 ml-1"
           width={24}
           height={24}

@@ -23,6 +23,8 @@ Implement an infinite scroll feature to display pages of products (10 per page)
 - React-Query (Tanstack): for data fetching from the endpoint
   - useUnfiniteQuery for loading pages of 10. The endpoint returns 194 items in total which is a small data set, but if we were considering significantly more I would consider a virtualisation library
 - react-intersection-observer: for detecting when to load next page of products
+- react-error-boundary: show fallback UI if there are errors and handle error logging gracefully
+- swiper: an image carousel for swiping between images
 
 ### Improvements
 
@@ -32,9 +34,9 @@ Implement an infinite scroll feature to display pages of products (10 per page)
    - Requests per second
    - Largest contenful paint
    - Speed index etc
-3. More tests
+3. More tests (+ MSW)
 4. Storybooks of components to show their different states
-5. Better SEO support (using Reatc Helmet)
+5. Better SEO support (using React Helmet)
 
 - Keywords
 - OpenGraph tags

@@ -15,7 +15,7 @@ describe("useGetProducts", () => {
   });
 
   it("fetches initial products and handles pagination correctly", async () => {
-    // Mock the first page page
+    // Mock the first page
     mockedAxios.get.mockResolvedValueOnce({
       data: {
         products: [{ id: 1, title: "Product 1" }],

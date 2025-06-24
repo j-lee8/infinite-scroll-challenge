@@ -40,7 +40,7 @@ export const ImageSlider = ({ images }: ImageCarouselProps) => {
             aria-roledescription="slide"
             aria-label={`Slide ${index + 1} of ${images.length}`}
           >
-            <div className="w-full h-full flex items-center justify-center">
+            <div className="max-w-full h-full flex items-center justify-center">
               <img
                 src={src}
                 alt={`Product image ${index + 1}`}
@@ -53,7 +53,7 @@ export const ImageSlider = ({ images }: ImageCarouselProps) => {
 
       {/* Pagination dots inside the slider area to select each image */}
       {images.length > 1 && (
-        <div className="absolute bottom-1 w-full flex justify-center gap-2 z-10">
+        <div className="absolute bottom-1 flex justify-center gap-2 z-10 mb-2 w-full">
           {images.map((_, idx) => (
             <button
               key={idx}

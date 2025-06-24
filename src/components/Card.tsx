@@ -5,10 +5,10 @@ interface CardProps {
   price: number;
   reviews: number;
   images: string[];
-  num: number;
+  id: number; // Not used, but would be needed if we wanted to click on a card to view more details about the product via a link
 }
 
-export const Card: FC<CardProps> = ({ title, price, reviews, num, images }) => {
+export const Card: FC<CardProps> = ({ title, price, reviews, images }) => {
   return (
     <div className="bg-gray-200 p-4 flex flex-col gap-4 w-fit">
       <div className="flex items-center justify-between">
@@ -24,9 +24,7 @@ export const Card: FC<CardProps> = ({ title, price, reviews, num, images }) => {
       <div className="bg-white p-3 gap-3 flex items-center">
         <div>
           <div>
-            <p className="font-medium">
-              {title} - {num}
-            </p>
+            <p className="font-medium">{title}</p>
           </div>
           <p className="text-sm text-gray-400">From ${price}</p>
         </div>

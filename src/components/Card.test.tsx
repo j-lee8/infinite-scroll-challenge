@@ -8,15 +8,13 @@ describe("Card component", () => {
     price: 160,
     reviews: 3,
     images: ["https://test.com/test.jpg"],
-    num: 123,
+    id: 123,
   };
 
   it("renders title, price, reviews and image correctly", () => {
     render(<Card {...mockProps} />);
 
-    expect(
-      screen.getByText(`${mockProps.title} - ${mockProps.num}`),
-    ).toBeInTheDocument();
+    expect(screen.getByText(mockProps.title)).toBeInTheDocument();
 
     expect(screen.getByText(`From $${mockProps.price}`)).toBeInTheDocument();
 

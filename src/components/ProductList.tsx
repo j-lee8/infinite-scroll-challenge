@@ -12,7 +12,6 @@ interface Product {
   price: number;
   images: string[];
   reviews: Review[];
-  num: number;
 }
 
 interface Review {
@@ -65,7 +64,7 @@ export const ProductList = () => {
               price={product.price}
               images={product.images}
               reviews={product.reviews.length}
-              num={product.id}
+              id={product.id}
             />
           )),
         )}

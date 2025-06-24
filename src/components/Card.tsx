@@ -15,7 +15,10 @@ export const Card: FC<CardProps> = ({ title, price, reviews, images }) => {
         <span className="text-sm bg-orange-100/60 px-4 py-1 rounded-full">
           {reviews} reviews
         </span>
-        <button className="text-sm bg-white/60 px-4 py-1 rounded-full">
+        <button
+          className="text-sm bg-white/60 px-4 py-1 rounded-full"
+          aria-label={`Customize ${title}`}
+        >
           Customize
         </button>
       </div>
@@ -24,7 +27,7 @@ export const Card: FC<CardProps> = ({ title, price, reviews, images }) => {
       <div className="bg-white p-3 gap-3 flex items-center">
         <div>
           <div>
-            <p className="font-medium">{title}</p>
+            <h3 className="font-medium">{title}</h3>
           </div>
           <p className="text-sm text-gray-400">From ${price}</p>
         </div>

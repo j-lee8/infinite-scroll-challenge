@@ -52,18 +52,20 @@ export const ImageSlider = ({ images }: ImageCarouselProps) => {
       </div>
 
       {/* Pagination dots inside the slider area to select each image */}
-      <div className="absolute bottom-1 w-full flex justify-center gap-2 z-10">
-        {images.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => instanceRef.current?.moveToIdx(idx)}
-            aria-label={`Go to slide ${idx + 1}`}
-            className={`w-2.5 h-2.5 rounded-full ${
-              currentSlide === idx ? "bg-black" : "bg-gray-300"
-            }`}
-          />
-        ))}
-      </div>
+      {images.length > 1 && (
+        <div className="absolute bottom-1 w-full flex justify-center gap-2 z-10">
+          {images.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => instanceRef.current?.moveToIdx(idx)}
+              aria-label={`Go to slide ${idx + 1}`}
+              className={`w-2.5 h-2.5 rounded-full ${
+                currentSlide === idx ? "bg-black" : "bg-gray-300"
+              }`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

@@ -6,8 +6,8 @@ interface ProductLayoutProps {
 
 export const ProductLayout: FC<ProductLayoutProps> = ({ children }) => {
   return (
-    <div className="mb-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
+    <ul className="mb-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
       {children}
-    </div>
+    </ul>
   );
 };

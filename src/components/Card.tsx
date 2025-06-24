@@ -12,7 +12,7 @@ interface CardProps {
 
 export const Card: FC<CardProps> = ({ title, price, reviews, images }) => {
   return (
-    <div className="bg-gray-200 p-4 flex flex-col gap-4 w-full max-w-[400px] mx-auto">
+    <li className="bg-gray-200 p-4 flex flex-col gap-4 w-full max-w-[400px] mx-auto">
       <div className="flex items-center justify-between">
         <span className="text-sm bg-orange-100/60 px-4 py-1 rounded-full">
           {reviews} reviews
@@ -42,6 +42,6 @@ export const Card: FC<CardProps> = ({ title, price, reviews, images }) => {
           height={24}
         />
       </div>
-    </div>
+    </li>
   );
 };

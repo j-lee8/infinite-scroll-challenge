@@ -16,6 +16,14 @@ Implement an infinite scroll feature to display pages of products (10 per page)
 
 1. pnpm test
 
+### Tools used
+
+- Vite
+- Vitest
+- React-Query (Tanstack): for data fetching from the endpoint
+  - useUnfiniteQuery for loading pages of 10. The endpoint returns 194 items in total which is a small data set, but if we were considering significantly more I would consider a virtualisation library
+- react-intersection-observer: for detecting when to load next page of products
+
 ### Improvements
 
 1. Internationalistion to support different languages

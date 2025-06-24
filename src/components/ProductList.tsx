@@ -41,7 +41,11 @@ export const ProductList = () => {
 
   if (isError) {
     return (
-      <div className="text-center text-red-600 my-4">
+      <div
+        className="text-center text-red-600 my-4"
+        role="alert"
+        aria-live="assertive" // We need to let the screen reader know of changes immediately
+      >
         Error loading products:{" "}
         {"message" in error && typeof error.message === "string"
           ? error.message
@@ -69,12 +73,23 @@ export const ProductList = () => {
 
       {hasNextPage && !isFetchingNextPage && <div ref={ref} />}
       {isFetchingNextPage && (
-        <div className="flex justify-center items-center my-2">
+        <div
+          className="flex justify-center items-center my-2"
+          aria-label="Loading more products" // No text when loading more (just a spinner) so provide aria label for screen readers
+          aria-live="polite" // Announce updates without interrupting the user for screen readers
+          role="status"
+        >
           <Spinner />
         </div>
       )}
       {!hasNextPage && (
-        <p className="flex justify-center my-2">No more products.</p>
+        <p
+          className="flex justify-center my-2"
+          role="status"
+          aria-live="polite"
+        >
+          No more products.
+        </p>
       )}
       <div className="border-b mb-8" />
     </>

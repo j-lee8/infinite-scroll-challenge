@@ -25,6 +25,7 @@ Implement an infinite scroll feature to display pages of products (10 per page)
   - useUnfiniteQuery for loading pages of 10. The endpoint returns 194 items in total which is a small data set, but if we were considering significantly more I would consider a virtualisation library
 - react-intersection-observer: for detecting when to load next page of products and lazy load them
 - react-error-boundary: show fallback UI if there are errors and handle error logging gracefully
+- react-i18next/i18next: show text in different languages (internationalisation)
 - swiper: an image carousel for swiping between images
 
 ### Improvements

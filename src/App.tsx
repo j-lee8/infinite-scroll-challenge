@@ -5,6 +5,7 @@ import { SeeMoreProductsButton } from "@components/button";
 import { Footer } from "@components/Footer";
 import { QueryErrorResetBoundary } from "@tanstack/react-query";
 import { ErrorBoundary } from "react-error-boundary";
+import { useTranslation } from "react-i18next";
 
 /**
  * @ErrorFallback to handle errors gracefully and display them to the user
@@ -33,12 +34,13 @@ const ErrorFallback = ({
 };
 
 const App = () => {
+  const { t } = useTranslation();
   return (
     <QueryErrorResetBoundary>
       {({ reset }) => (
         <ErrorBoundary FallbackComponent={ErrorFallback} onReset={reset}>
           {/* IMPROVEMENT: Use internationalisation (i18) to support different languages (especially import for different markets) */}
-          <MainLayout title="Home Office" additionalTitle="Essentials.">
+          <MainLayout title={t("title")} additionalTitle={t("additionalTitle")}>
             <ProductListContainer />
 
             {/* Use semantic HTML for better a11y */}

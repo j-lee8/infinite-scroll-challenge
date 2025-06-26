@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",
-    "test:watch": "vitest watch"
+    "test:watch": "vitest watch",
+    "ci:build": "pnpm lint && pnpm test && pnpm install --frozen-lockfile && pnpm build"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.81.2",

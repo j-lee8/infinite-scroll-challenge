@@ -20,7 +20,7 @@ interface Review {
   date: string;
 }
 
-export const ProductList = () => {
+export const ProductListContainer = () => {
   const {
     data,
     fetchNextPage,

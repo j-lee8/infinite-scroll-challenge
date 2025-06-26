@@ -7,7 +7,7 @@ type TitleProps = {
 
 export const Title: FC<TitleProps> = ({ title, additionalTitle }) => {
   return (
-    <div className="mb-20">
+    <header className="mb-20">
       <h1 className="text-4xl md:text-5xl font-extralight text-black">
         {title}
       </h1>
@@ -16,6 +16,6 @@ export const Title: FC<TitleProps> = ({ title, additionalTitle }) => {
           {additionalTitle}
         </h2>
       )}
-    </div>
+    </header>
   );
 };

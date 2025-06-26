@@ -1,5 +1,5 @@
 import "./App.css";
-import { ProductList } from "@components/ProductList";
+import { ProductListContainer } from "@components/ProductListContainer";
 import { MainLayout } from "@layouts/MainLayout";
 import { SeeMoreProductsButton } from "@components/button";
 import { Footer } from "@components/Footer";
@@ -34,7 +34,7 @@ const App = () => {
         <ErrorBoundary FallbackComponent={ErrorFallback} onReset={reset}>
           {/* IMPROVEMENT: Use internationalisation (i18) to support different languages */}
           <MainLayout title="Home Office" additionalTitle="Essentials.">
-            <ProductList />
+            <ProductListContainer />
 
             {/* Use semantic HTML for better a11y */}
             <Footer>

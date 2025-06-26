@@ -6,6 +6,11 @@ import { Footer } from "@components/Footer";
 import { QueryErrorResetBoundary } from "@tanstack/react-query";
 import { ErrorBoundary } from "react-error-boundary";
 
+/**
+ * @ErrorFallback to handle errors gracefully and display them to the user
+ * @param param0
+ * @returns
+ */
 const ErrorFallback = ({
   error,
   resetErrorBoundary,
@@ -32,7 +37,7 @@ const App = () => {
     <QueryErrorResetBoundary>
       {({ reset }) => (
         <ErrorBoundary FallbackComponent={ErrorFallback} onReset={reset}>
-          {/* IMPROVEMENT: Use internationalisation (i18) to support different languages */}
+          {/* IMPROVEMENT: Use internationalisation (i18) to support different languages (especially import for different markets) */}
           <MainLayout title="Home Office" additionalTitle="Essentials.">
             <ProductListContainer />
 
